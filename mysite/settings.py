@@ -25,7 +25,7 @@ SECRET_KEY = '@0mk4zhi@qh@@uhcvva-_#4ee5v9epp_py&h*z=zu!j6nctxat'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'app'
+    'app',
+    'accounts',
+    'django.contrib.sites', 
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
 ]
 
 MIDDLEWARE = [
@@ -120,3 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
