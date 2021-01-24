@@ -82,3 +82,4 @@ class PostDeleteView(LoginRequiredMixin, View):
         post_data = Post.objects.get(id=self.kwargs['pk'])
         post_data.delete()
         return redirect('index')
+
